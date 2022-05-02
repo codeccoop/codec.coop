@@ -57,7 +57,7 @@
       <div class="navbar-item">
           {% for link in site.data.links %}
             <span data-link="{{ link.id }}" class="icon is-small">
-				<a aria-label="Enllaç al nostre perfil de {{ link.id }}" href="{{ link.url }}" ><i></i></a>
+				<a aria-label="Enllaç al nostre perfil de {{ link.id }}" target="_blank" href="{{ link.url }}" ><i></i></a>
             </span>
             {% endfor %}
       </div>
