@@ -44,20 +44,11 @@ elif [[ "$order" == "build:pre" ]]; then
 
 	echo
 	echo "Build success!"
-	echo "Built package has been places on $dir/dist.zip"
 elif [[ "$order" == "build" ]]; then
-	if [[ -f "dist.zip" ]]; then
-		rm dist.zip
-	fi
-
 	JEKYLL_ENV=production bundle exec jekyll build # --config _config.pro.yml 
-
-	zip dist.zip -r _site/*
 
 	echo
 	echo "Build success!"
-	echo "Built package has been places on $dir/dist.zip"
-
 else
 	echo "Unknown command"
 fi
