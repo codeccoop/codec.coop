@@ -1,0 +1,27 @@
+---
+---
+
+{% assign workshops = site.workshops | where: "category", "open-learning" %} 
+{% for workshop in workshops %}
+
+<li>
+    <a
+        href="{{ base.url }}{{ workshop.url }}"
+        class="workshops__item-anchor"
+        data-taget="{{ workshop.id }}"
+        aria-controls="workshops"
+    >
+        <article class="workshops__item media">
+            <figure class="workshops__item-image media-left">
+                <p class="image is-square">
+                    <img src="{{ base.url }}assets/images/{{ workshop.id }}.png" alt="Portada del taller '{{ workshop.title }}'" />
+                </p>
+            </figure>
+            <div class="workshops__item-info media-content">
+                <h2>{{ workshop.title }}</h2>
+                <p>{{ workshop.description }}</p>
+            </div>
+        </article>
+    </a>
+</li>
+{% endfor %}

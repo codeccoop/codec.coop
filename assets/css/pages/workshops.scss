@@ -9,37 +9,37 @@
 @import "typography";
 
 main.workshops {
-    padding: $header-height $site-paddings 1rem;
-    min-height: 100vh;
+  padding: $header-height $site-paddings 1rem;
+  min-height: 100vh;
 
-    .workshops__title {
-		margin-top: 25px;
-        font-weight: 500;
-		display: flex;
-		flex-direction: column;
-		justify-content: end;
-		padding-bottom: 10px;
+  .workshops__title {
+    margin-top: 25px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding-bottom: 10px;
 
-		.is-mobile & {
-			margin-top: 0px;
+    .is-mobile & {
+      margin-top: 0px;
 
-			@media (max-height: 500px) {
-				font-size: 1.6875rem;
+      @media (max-height: 500px) {
+        font-size: 1.6875rem;
 			}
 		}
 
-        .subtitle {
-            display: block;
-        }
+    .subtitle {
+      display: block;
     }
+  }
 }
 
 .workshops__image {
-    padding-left: 5vw;
-    filter: drop-shadow(2px 2px 6px #0003);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  padding-left: 5vw;
+  filter: drop-shadow(2px 2px 6px #0003);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
 	picture {
 		display: flex;
@@ -47,76 +47,109 @@ main.workshops {
 
 		> img {
 			width: 100%;
-            height: 150px;
-            object-fit: contain;
+      height: 150px;
+      object-fit: contain;
 
-            @include m-media(xsm) {
-                height: 250px;
-            }
+      @include m-media(xsm) {
+        height: 250px;
+      }
 
 			@include m-media(sm) {
-                height: auto;
+        height: auto;
 				max-width: 100%;
 			}
 		}
 	}
 }
 
-.workshops__items {
-    border-top: 1px solid $font-color;
-    margin-top: 2rem;
-    padding-top: 3rem;
+.workshops__archive {
+  border-top: 1px solid $font-color;
+  margin-top: 2rem;
+  padding-top: 2rem;
 
-    a {
-        display: block;
-        color: $font-color;
-        text-decoration: none;
+  a {
+    display: block;
+    color: $font-color;
+    text-decoration: none;
 
-        &:not(:last-child) {
-            margin-bottom: 1em;
-        }
-
-        &:hover {
-            h2.title {
-                color: $action-color;
-                text-decoration: underline;
-            }
-        }
+    &:not(:last-child) {
+      margin-bottom: 1em;
     }
+
+    &:hover {
+      h2.title {
+        color: $action-color;
+        text-decoration: underline;
+      }
+    }
+}
+}
+
+.workshops__breadcrumb {
+  display: none;
+
+  &.visible {
+    display: block;
+    position: relative;
+    text-align: left;
+    text-indent: .75rem;
+
+    &:before {
+      position: absolute;
+      left: 0px;
+      top: 50%;
+      transform: translate(0, -50%);
+      content: "<";
+      text-indent: 0;
+    }
+
+    &:hover {
+      color: $action-color;
+      text-decoration: underline;
+    }
+  }
+
+  > p {
+    cursor: pointer;
+  }
+}
+
+ul.workshops__items {
+  list-style: none;
+  margin: 0;
+
+  > li {
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+
+    &.visible {
+      opacity: 1;
+    }
+  }
 }
 
 .workshops__item {
-    @include m-media(zr, md) {
-        flex-direction: column;
-        align-items: center;
-        flex-flow: column-reverse;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 
-        .workshops__item-badge {
-            margin: 0;
+    @include m-media(sm) {
+        text-align: left;
+        flex-direction: row;
+    }
 
-            .is-128x128 {
-                width: 100%;
-                height: 150px;
-                display: flex;
-                align-items: center;
+    > figure.workshops__item-image {
+        margin-bottom: 0px;
+        width: 160px;
 
-                img {
-                    max-height: 100%;
-                }
-            }
+        @include m-media(sm) {
+          width: 220px;
+          margin-left: 0px;
         }
-    }
 
-    .workshops__item-badge {
-        margin-top: .25em;
-    }
-}
-
-.workshops__items a:nth-child(even) .workshops__item {
-    flex-flow: row-reverse;
-
-    @include m-media(zr, md) {
-        flex-flow: column-reverse;
+        img {
+          object-fit: contain;
+        }
     }
 }
 

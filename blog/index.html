@@ -18,8 +18,11 @@ page: blog
       <a
         data-category="{{ category | first }}"
         class="blog__category"
-        aria-role="buton"
-        >{{ category | first }}</a
+        href="/blog/categories/{{ category | first }}.html"
+        hx-get="/blog/categories/{{ category | first }}.html"
+        hx-target="#archive"
+        aria-control="archive"
+    >{{ category | first }}</a
       >
     </li>
     {% endfor %}
@@ -28,19 +31,23 @@ page: blog
 </aside>
 {% endif %}
 
-<ul class="blog__posts">
-  {% for post in paginator.posts %}
+<ul id="archive" class="blog__posts" aria-live="polite">
+  {% assign posts = paginator.posts | slice: 0, 4 %}
+  {% for post in posts %}
   <li class="blog__entry">
     <h4 class="blog__entry-title title is-4">
       <a href="{{ post.url }}">{{ post.title }}</a>
     </h4>
+    {% if post.subtitle %}
+    <p>{{ post.subtitle }}</p>
+    {% else %}
     <p>{{ post.excerpt }}</p>
+    {% endif %}
     <time datetime="{{ post.date }}">{{ post.date | date_to_string }}</time>
   </li>
   {% endfor %}
 </ul>
 
-<!-- Pagination links -->
 {% if paginator.total_pages > 1 %}
 <div id="blogPagination" class="blog__pagination pagination">
   {% if paginator.previous_page %}

@@ -34,27 +34,44 @@ page: workshops
 			</picture>
         </div>
     </div>
-    <div id="workshops" class="workshops__items">
-        {% assign workshops = site.workshops | where: "status", "public" %}
-        {% if workshops.size > 0 %}
-        {% for workshop in workshops %}
-        <a href="{{ workshop.url }}">
-            <article id="{{ workshop.id }}" class="workshops__item media">
-                <figure class="workshops__sorkshop-badge media-left">
-                    <p class="image is-128x128">
-					<picture>
-						<source srcset="{{ base.url }}/assets/images/workshops/{{ workshop.id | downcase }}.png" type="image/png" />
-						<img src="{{ base.url }}/assets/images/workshops/{{workshop.id | downcase }}.webp" type="image/webp" alt="Logotip del taller {{ workshop.title}}"/>
-					</picture>
-                    </p>
-                </figure>
-                <div class="workshops__workshop-description media-content">
-                    <h2 class="title is-4">{{ workshop.title }}</h2>
-                    <p>{{ workshop.description }}</p>
-                </div>
-            </article>
-        </a>
-        {% endfor %}
+    <div id="workshops" class="workshops__archive" aria-live="polite">
+        {% if site.data.workshops.size > 0 %}
+        <div class="workshops__content">
+            <div class="workshops__breadcrumb">
+                <p
+                    aria-label="breadcrumb"
+                    data-target="{{ base.url }}workshops.html"
+                    role="link"
+                    aria-controls="workshops"
+                >Tornar a l'inici</button> 
+            </div>
+            <ul class="workshops__items">
+            {% for workshop_category in site.data.workshops %}
+                <li class="visible">
+	                <a
+                        class="workshops__item-anchor"
+                        data-target="{{ workshop_category.name }}"
+	                    href="{{ base.url }}ajax/{{ workshop_category.id }}.html"
+	                    aria-controls="workshops"
+	                    hx-get="{{ base.url }}ajax/{{ workshop_category.id }}.html"
+	                    hx-target=".workshops__items"
+	                >
+			            <article class="workshops__item media">
+			                <figure class="workshops__item-image media-left">
+			                    <p class="image is-square">
+			                        <img src="{{ base.url }}assets/images/workshops/{{ workshop_category.id }}.png" alt="Portada de la familia de tallers '{{ workshop_category.name }}'" />
+			                    </p>
+			                </figure>
+			                <div class="workshops__item-info media-content">
+			                    <h2>{{ workshop_category.name }}</h2>
+			                    <p>{{ workshop_category.description }}</p>
+			                </div>
+			            </article>
+	                </a>
+                </li>
+            </div>
+            {% endfor %}
+        </div>
         {% else %}
         <figure class="workshops__work-in-progress">
             <figcaption>Estem treballant en el contingut d'aquesta secció.</figcaption>
