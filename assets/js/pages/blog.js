@@ -1,8 +1,12 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const $archive = document.querySelector(".blog__posts");
-  const $paginator = document.getElementById("blogPagination");
+fetch("/ajax/posts/index.html")
+  .then(res => res.text())
+  .then(onLoad);
 
-  const posts = Array.apply(null, document.querySelectorAll(".blog__entry"));
+function onLoad(content) {
+  const $archive = document.getElementById("archive");
+  $archive.innerHTML = content;
+
+  const $paginator = document.getElementById("blogPagination");
 
   let currentCategory = "all";
   const $categories = document.getElementsByClassName("blog__categories")[0];
@@ -26,9 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
     $categories.classList.remove("is-active");
     if ($paginator) $paginator.classList.remove("hidden");
 
-    $archive.innerHTML = "";
-    posts.forEach($post => {
-      $archive.appendChild($post);
-    });
+    $archive.innerHTML = content;
   }
-});
+}

@@ -36,8 +36,24 @@ defaults:
     values:
       layout: "compress"
 
-paginate: 2
-paginate_path: "/blog/page:num/"
+pagination:
+    enabled: true
+    per_page: 1
+    permalink: "/:num/"
+
+autopages:
+    enabled: true
+    categories:
+        title: ':cat posts'
+        permalink: '/ajax/cat/:cat/'
+    collections:
+        enabled: false
+        title: ':coll items'
+        permalink: '/ajax/coll/:coll/'
+    tags:
+        enabled: false
+        title: ':tag posts'
+        permalink: '/ajax/tag/:tag/'
 
 plugins:
   - jekyll-feed

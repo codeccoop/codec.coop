@@ -1,0 +1,49 @@
+---
+layout: void
+pagination:
+    enabled: true
+---
+
+<ul class="blog__posts">
+  {% for post in paginator.posts %}
+  <li class="blog__entry">
+    <h4 class="blog__entry-title title is-4">
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </h4>
+    {% if post.subtitle %}
+    <p>{{ post.subtitle }}</p>
+    {% else %}
+    <p>{{ post.excerpt }}</p>
+    {% endif %}
+    <time datetime="{{ post.date }}">{{ post.date | date_to_string }}</time>
+  </li>
+  {% endfor %}
+</ul>
+
+{% if paginator.total_pages > 1 %}
+<div id="blogPagination" class="blog__pagination pagination">
+  {% if paginator.previous_page %}
+  <a
+      class="previous"
+      href="{{ paginator.previous_page_path }}"
+      hx-get="{{ paginator.previous_page_path }}"
+      hx-target="#archive"
+  >Previous</a>
+  {% else %}
+  <span class="previous">Previous</span>
+  {% endif %}
+  <span class="page_number">
+    Page: {{ paginator.page }} of {{ paginator.total_pages }}
+  </span>
+  {% if paginator.next_page %}
+  <a
+      class="next"
+      href="{{ paginator.next_page_path }}"
+      hx-get="{{ paginator.next_page_path }}"
+      hx-target="#archive"
+  >Next</a>
+  {% else %}
+  <span class="next">Next</span>
+  {% endif %}
+</div>
+{% endif %}
