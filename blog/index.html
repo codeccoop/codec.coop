@@ -26,7 +26,11 @@ page: blog
       >
     </li>
     {% endfor %}
-    <button></button>
+    <button
+        data-category="all"
+        hx-get="{{ base.url }}/ajax/posts/index.html"
+        hx-target="#archive"
+    ></button>
   </ul>
 </aside>
 {% endif %}

@@ -1,36 +1,25 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const $el = document.getElementsByTagName("main")[0];
-  const $workshops = document.getElementById("workshops");
-  const $workshops_items = $workshops.querySelector(".workshops__items");
-  const $workshops_breadcrumb = $workshops.querySelector(".workshops__breadcrumb");
-  const $workshops_categories = Array.apply(
-    null,
-    $workshops_items.querySelectorAll(".workshops__items li")
-  );
-  $workshops_items.addEventListener("htmx:afterSwap", onSwapItems);
+  fetch("ajax/workshops/categories.html")
+    .then(res => res.text())
+    .then(onLoad);
 
-  $workshops_breadcrumb.addEventListener("click", onWorkshopsBreadcrumbClick);
+  function onLoad(content) {
+    const $workshops = document.getElementById("workshops");
+    $workshops.innerHTML = content;
+    htmx.process($workshops);
+    onSwapItems({ detail: { elt: $workshops } });
 
-  function onSwapItems({ detail }) {
-    if (detail.successful) {
-      $workshops_breadcrumb.classList.add("visible");
+    const $list = $workshops.querySelector(".workshops__items");
+    const $breadcrumb = $workshops.querySelector(".workshops__breadcrumb");
+
+    $workshops.addEventListener("htmx:afterSwap", onSwapItems);
+
+    function onSwapItems({ detail }) {
+      setTimeout(() => {
+        for (let child of detail.elt.querySelectorAll(".workshops__items li")) {
+          child.classList.add("visible");
+        }
+      }, 100);
     }
-
-    Array.apply(null, $workshops_categories).forEach($cat => {
-      $cat.classList.remove("visible");
-    });
-
-    Array.apply(null, detail.elt.children).forEach($item => {
-      $item.classList.add("visible");
-    });
-  }
-
-  function onWorkshopsBreadcrumbClick() {
-    $workshops_items.innerHTML = "";
-    $workshops_categories.forEach($cat => {
-      $workshops_items.appendChild($cat);
-      setTimeout(() => $cat.classList.add("visible"), 0);
-    });
-    $workshops_breadcrumb.classList.remove("visible");
   }
 });

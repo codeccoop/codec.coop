@@ -129,6 +129,12 @@ aside.blog__categories.level {
 
 .blog__entry {
     padding: 1rem 2rem 1rem 0;
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+
+    &.visible {
+      opacity: 1;
+    }
 
     &:not(:first-child) {
         border-top: 1px solid

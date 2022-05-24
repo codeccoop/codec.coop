@@ -62,50 +62,40 @@ main.workshops {
 	}
 }
 
-.workshops__archive {
+#workshops {
   border-top: 1px solid $font-color;
   margin-top: 2rem;
   padding-top: 2rem;
+  position: relative;
+}
 
-  a {
-    display: block;
-    color: $font-color;
-    text-decoration: none;
+.workshops__breadcrumb {
+  visibility: hidden;
+  position: absolute;
+  top: .5rem;
+  left: 0px;
 
-    &:not(:last-child) {
-      margin-bottom: 1em;
-    }
+  &.visible {
+    visibility: visible;
+    text-align: left;
+    text-indent: .75rem;
 
-    &:hover {
-      h2.title {
+    li a {
+      padding-left: 0;
+      padding-right: 0;
+
+      &:hover {
         color: $action-color;
         text-decoration: underline;
       }
     }
-}
-}
+  }
 
-.workshops__breadcrumb {
-  display: none;
+  > ul {
+    margin: 0;
 
-  &.visible {
-    display: block;
-    position: relative;
-    text-align: left;
-    text-indent: .75rem;
-
-    &:before {
-      position: absolute;
-      left: 0px;
-      top: 50%;
-      transform: translate(0, -50%);
-      content: "<";
-      text-indent: 0;
-    }
-
-    &:hover {
-      color: $action-color;
-      text-decoration: underline;
+    li + li {
+      margin-top: 0px;
     }
   }
 
@@ -124,6 +114,20 @@ ul.workshops__items {
 
     &.visible {
       opacity: 1;
+    }
+  }
+}
+
+.workshops__item-anchor {
+  color: $font-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+
+    .workshops__item-info h2 {
+      color: $action-color;
+      text-decoration: underline;
     }
   }
 }

@@ -4,11 +4,13 @@
 @import "reset";
 @import "colors";
 
-main.post {
+main.post,
+main.workshop {
     padding: $header-height $site-paddings 3rem;
 }
 
-.post__content {
+.post__content,
+.workshop__content {
 	max-width: $post-width;
 	margin-left: auto;
 	margin-right: auto;
@@ -37,9 +39,10 @@ main.post {
 	}
 }
 
-.post__breadcrumb {
+.post__breadcrumb,
+.workshop__breadcrumb {
 	max-width: $post-width;
 	margin-left: auto;
 	margin-right: auto;
-    margin-top: 1em;
+  margin-top: 1em;
 }
