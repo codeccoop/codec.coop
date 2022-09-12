@@ -1,8 +1,7 @@
 ---
 layout: default
 ---
-
-<link rel="stylesheet" href="{{ base.url }}/assets/css/pages/post.css" />
+<link rel="stylesheet" href="{{ base.url }}/assets/css/collections/workshop.css" />
 
 <nav class="workshop__breadcrumb breadcrumb is-small has-arrow-separator" aria-label="breadcrumbs">
   <ul>
@@ -10,9 +9,12 @@ layout: default
     <li class="is-active"><a aria-current="page">{{ page.title }}</a></li>
   </ul>
 </nav>
-<div class="workshop__content content">
-    <img src="{{ base.url }}/assets/images/workshops/{{ page.id }}.png" />
-    <h1 class="title is-3">{{ page.title }}</h1>
-    <p class="subtitle" >{{ page.description }}</p>
-    {{ content }}
-</div>
+<figure class="workshop__image image">
+    <picture>
+        <source srcset="{{ base.url }}/assets/images{{ page.id }}.webp" type="image/webp" />
+        <img src="{{ base.url }}/assets/images{{ page.id }}.png" type="image/png" alt="Imàtge del taller '{{ page.title }}'"/>
+    </picture>
+</figure>
+<h1 class="title is-3">{{ page.title }}</h1>
+<p class="subtitle" >{{ page.description }}</p>
+<div class="workshop__content content">{{ content }}</div>

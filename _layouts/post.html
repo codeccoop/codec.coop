@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<link rel="stylesheet" href="{{ base.url }}/assets/css/pages/post.css" />
+<link rel="stylesheet" href="{{ base.url }}/assets/css/blog/post.css" />
 
 <nav class="post__breadcrumb breadcrumb is-small has-arrow-separator" aria-label="breadcrumbs">
   <ul>
@@ -10,19 +10,25 @@ layout: default
     <li class="is-active"><a aria-current="page">{{ page.title }}</a></li>
   </ul>
 </nav>
-<div class="post__content content">
-  <h1 class="title is-3">{{ page.title }}</h1>
-  {% if page.subtitle %}
-  <p class="subtitle is-4">{{ page.subtitle }}</p>
-  {% endif %}
-
-  <p>
-    {{ page.date | date_to_string }} {% assign author = site.authors | where:
-    'short_name', page.author | first %} {% if author %} -
-    <!--  <a href="{{ author.url }}">{{ author.name }}</a> -->
-    <a>{{ author.name }}</a>
+<div class="post__title">
+    <p>
+        {{ page.date | date_to_string }} {% assign author = site.authors | where:
+        'short_name', page.author | first %} {% if author %} -
+        <!--  <a href="{{ author.url }}">{{ author.name }}</a> -->
+        <a>{{ author.name }}</a>
+        {% endif %}
+    </p>
+    <h1 class="title is-3">{{ page.title }}</h1>
+    {% if page.subtitle %}
+    <p class="subtitle is-4">{{ page.subtitle }}</p>
     {% endif %}
-  </p>
-
-  {{ content }}
 </div>
+{%if page.thumbnail %}
+<picture class="post__thumbnail">
+    <source srcset="{{ page.thumbnail }}.webp" type="image/webp" />
+    <img src="{{ page.thumbnail }}.png" type="image/png" alt="Portada del post '{{ page.title }}'" />
+</picture>
+{% endif %}
+<article class="post__content content">
+    {{ content }}
+</article>

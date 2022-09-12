@@ -133,28 +133,29 @@ ul.workshops__items {
 }
 
 .workshops__item {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  @include m-media(sm) {
+      text-align: left;
+      flex-direction: row;
+  }
+
+  > figure.workshops__item-image {
+    margin-bottom: 0px;
+    margin-bottom: 0.5rem;
+    width: 160px;
 
     @include m-media(sm) {
-        text-align: left;
-        flex-direction: row;
+      width: 220px;
+      margin-left: 0px;
     }
 
-    > figure.workshops__item-image {
-        margin-bottom: 0px;
-        width: 160px;
-
-        @include m-media(sm) {
-          width: 220px;
-          margin-left: 0px;
-        }
-
-        img {
-          object-fit: contain;
-        }
+    img {
+      object-fit: contain;
     }
+  }
 }
 
 .workshops__work-in-progress {

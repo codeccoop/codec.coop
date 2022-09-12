@@ -31,8 +31,8 @@ page: products
         </div>
         <div class="products__image column is-4">
 			<picture>
-				<source srcset="{{ base.url }}/assets/images/products.png" type="image/png" />
-				<img src="{{ base.url }}/assets/images/products.webp" type="image/webp" alt="Il·lustració de la secció de productes"/>
+				<source srcset="{{ base.url }}/assets/images/products.webp" type="image/webp" />
+				<img src="{{ base.url }}/assets/images/products.png" type="image/png" alt="Il·lustració de la secció de productes"/>
 			</picture>
         </div>
     </div>
@@ -43,8 +43,8 @@ page: products
             <a href="{{ product.url }}" target="__blank">
                 <p class="image is-128x128">
 				<picture>
-					<source srcset="{{ base.url }}/assets/images/logos/{{ product.id }}.png" type="image/png" />
-					<img src="{{ base.url }}/assets/images/logos/{{product.id }}.webp" type="image/webp" alt="Logotip del producte {{product.name }}"/>
+					<source srcset="{{ base.url }}/assets/images/logos/{{ product.id }}.webp" type="image/webp" />
+					<img src="{{ base.url }}/assets/images/logos/{{product.id }}.png" type="image/png" alt="Logotip del producte {{product.name }}"/>
 				</picture>
                 </p>
             </a>
