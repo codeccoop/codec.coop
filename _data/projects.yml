@@ -47,3 +47,10 @@
   tags:
       - Programari a mida
       - Pàgina web estàtica
+- id: bikelogic
+  url: https://www.bikelogic.org
+  name: Bikelogic
+  description: Web i botiga online de la cooperativa de ciclologística Bikelogic
+  tags:
+      - Wordpress
+      - e-commerce
