@@ -1,54 +1,9 @@
 ---
-title: "Retalls de còdi I: DynIptables"
+title: "Hello, Yunohost: DNS"
 layout: post
 author: lucas
-categories: retalls
+categories: autoallotjament
 ---
-
-Oli! Això del blog s'ha quedat més aturat del que ens hauria agradat. Tot i que,
-absolutament tothom, ens haviem advertit, això de començar una cooperativa és
-més costós i carregant del que ens hauria agradat.
-
-En qualsevol cas, aquí seguim, després de gairebé un any, i amb moltes coses
-apreses, també algunes de caràcter tècnic. Avui, la idea és compartir, aquí al
-blog, una solució que hem hagut d'apanyar per poder tenir un servidor autoallotjat
-amb serveis de correu electrònic i d'emmagatzematge en xarxa.
-
-La nova secció l'hem anomenada ***Retalls de codi***, ja que l'altre dia vaig buscar
-com es traduia _snippets_ al català i resulta que tota aquesta estona hem estat dient
-retalls, o retales, en castellà, i em va semblar molt més bonica la paraula en la
-nostra llengua que la seva homònima aglosaxona.
-
-Tot i que la secció és nova, te origen en l'altre sèrie d'articles sobre
-autoallotjament que volem anar publicant i que
-podeu trobar presentada [aquí](/self-hosting/2022/02/24/yunohost.html). De fet, el
-servidor que ens ha portat fins aquí, és una instància del Yunohost OS, i sobre el
-que, ho prometem, seguirem publicant contingut a la seva respectiva secció.
-
-Al turrón!
-
-## DynIptables
-
-Què és **DynIptables** i per què mereix una entrada al nostre blog? Doncs
-és una solució per poder exposar la teva xarxa local a través d'una IP estàtica.
-Per aconseguir això pots 1. Camelar-te el teu proveidor d'internet perquè te'n
-assigni una seduint-lo acceptant una pujada de la teva tarifa d'internet de 15
-euros mensuals, més 15 euros més quan vulguis desistir del contracte, o 2.
-Contractar una petita VPS per 3 o 4 euros al mes, utilitzar **DynIptables**
-perquè et faci la feina bruta, i estalviar-te haver de negociar amb aquests
-contrabandistes. Altres opcions, serien les d'utilitzar un servei de dns
-dinàmica, o contractar una VPN amb ip estàtica, tots ells a preus similars als
-del lloguer del servidor, però amb menys capacitat per gestionar la teva
-infraestructura.
-
-Per a la penya del codi, podeu trobar el repositòri públicat a [GitHub](https://github.com/orzocogorzo/dyniptables).
-Allà es descriu, pas a pas, com s'ha d'instal·lar i configurar el paquet per
-tenir-lo corrent a la teva VPS, així que no entrarem ens estalviarem els detalls
-i ens explaiarem més en els perquès.
-
-I per què DynIptables? Descartada la negociació amb els segrestadors de la teva ip,
-per què no optar per un servei de dns dinàmica, o per la VPN? Per respondre aquesta
-pregunta, primer deixeu-me que expliqui en que consisteix cadascuna de les solucions:
 
 ### DNS
 
