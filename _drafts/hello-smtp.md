@@ -7,7 +7,7 @@ categories: autoallotjament
 
 ### SMTP
 
-Diu Klinenber a un [article de la directa](https://directa.cat/inventar-la-biblioteca-en-una-societat-com-lactual-seria-massa-radical/)
+Diu Klinenberg a un [article de la directa](https://directa.cat/inventar-la-biblioteca-en-una-societat-com-lactual-seria-massa-radical/)
 que *"Inventar la biblioteca en una societat com l'actual seria massa radical"*
 ja que seria tatxada de comunista i d'atentar contra la lliberat de mercat.
 Algo similar passa amb el correu electrònic. Aquest funciona utilitzant el
