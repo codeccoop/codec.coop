@@ -1,0 +1,21 @@
+---
+---
+
+@import "reset";
+@import "colors";
+@import "images";
+@import "breakpoints";
+@import "viewport";
+@import "typography";
+
+main.anuncis {
+    margin: 3rem 0;
+    padding: $header-height $site-paddings 1rem;
+    min-height: 100vh;
+    ul {
+        list-style: circle;
+        li{
+            margin: 1rem 2rem;
+        }
+    }
+}
