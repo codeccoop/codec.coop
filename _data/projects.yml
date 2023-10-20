@@ -15,7 +15,7 @@
   name: Oficina Virtual Som Connexió
   description: Suport al manteniment i desenvolupament de l'oficina virtual de Som Connexió.
   tags:
-    - Frontend
+    - SPA
 - id: miradanativa
   url: https://www.miradanativa.org/
   name: MiradaNativa
@@ -40,13 +40,12 @@
   description: Pàgina web de elMercat i plataforma d'inscripcións.
   tags:
     - WordPress
-    - eCommerce
 - id: datakitchen
   url: https://goingdigital.oecd.org/datakitchen/
   name: OECD DataKitchen
   description: Observatori de dades del projecte DataKitchen.
   tags:
-    - Frontend
+    - SPA
 - id: wider-wiid 
   url: https://www4.wider.unu.edu/
   name: UNU Wider WIID
@@ -59,13 +58,12 @@
   description: Portafoli i plataforma e-commerce desenvolupada amb WordPress per l'artista multidisciplinar Silvia Genovés.
   tags: 
     - WordPress
-    - eCommerce
 - id: toetsav
   url: https://www.to.upc.edu
   name: TO ETSAV
   description: '<em>&#8220;El projecte TO vol qüestionar-se la idea de sostenibilitat: Què cal sostenir?&#8221;</em>. Pàgina web del projecte arquitectònic.'
   tags:
-    - Frontend
+    - SPA
 - id: kilometrezero
   url: https://kilometrezero.org/
   name: KilometreZero
@@ -83,7 +81,7 @@
   name: Equinox Trail
   description: Pàgina web de la Equinox Trail, una lliga de dues curses de trail celebrada als dos equinoccis que atravessarem al llarg de l'any 2022
   tags:
-      - JAMStack
+      - Jekyll
 - id: icqa_waves
   url: https://dadescomunals.org/icqa_waves
   name: ICQA Waves
@@ -96,4 +94,3 @@
   description: Web i botiga online de la cooperativa de ciclologística Bikelogic
   tags:
       - WordPress
-      - eCommerce
