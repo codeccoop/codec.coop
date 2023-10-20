@@ -572,7 +572,7 @@
 
     .projects__product {
         &:not(:last-child) {
-			padding-bottom: 2rem;
+			      padding-bottom: 2rem;
             @include m-media(portrait) {
                 @media (max-height: 500px) {
                     padding-bottom: 1rem;
@@ -584,8 +584,8 @@
         }
 
         picture > img {
-            height: 30vw;
-            max-height: 20vh;
+            height: 40vw;
+            max-height: 30vh;
 
             @include m-media(md) {
                 height: 20vw;

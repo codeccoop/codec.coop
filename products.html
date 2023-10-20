@@ -40,14 +40,18 @@ page: products
     {% for product in site.data.products %}
     <article name="{{product.name | downcase}}" class="products__product media">
         <figure class="products__product-badge media-left">
-            <a href="{{ product.url }}" target="__blank">
                 <p class="image is-64x64">
-				<picture>
-					<source srcset="{{ base.url }}/assets/images/logos/{{ product.id }}.png" type="image/png" />
-					<img src="{{ base.url }}/assets/images/logos/{{product.id }}.webp" type="image/webp" alt="Logotip del producte {{product.name }}"/>
-				</picture>
+                    <picture>
+                        <source srcset="{{ base.url }}/assets/images/logos/{{ product.id }}.png" type="image/png" />
+                        <img src="{{ base.url }}/assets/images/logos/{{product.id }}.webp" type="image/webp" alt="Logotip del producte {{product.name }}"/>
+                    </picture>
                 </p>
-            </a>
+                <p class="image is-96x96">
+                    <picture>
+                        <source srcset="{{ base.url }}/assets/images/logos/{{ product.id }}.png" type="image/png" />
+                        <img src="{{ base.url }}/assets/images/logos/{{product.id }}.webp" type="image/webp" alt="Logotip del producte {{product.name }}"/>
+                    </picture>
+                </p>
         </figure>
         <div class="products__product-body media-content">
             <a class="products__product-toggle" aria-expanded="false" role="button" tabindex="0" aria-pressed="false">

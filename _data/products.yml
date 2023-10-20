@@ -24,7 +24,7 @@
     programari, ni de velocitats de càrrega. Per últim, la seva simplicitat i lleugeresa ofereix
     les pàgines web amb el menor consum energètic del nostre catàleg.
 - id: react
-  name: Single-Page Application
+  name: React
   subtitle: Aplicacions web d'alt rendiment
   description: >-
     Aplicacions web d'alt rendiment, servides com a contingut estàtic i alimentades de dades via
