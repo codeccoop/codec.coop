@@ -1,56 +1,99 @@
+- id: somcomunitats
+  url: https://somcomunitats.coop/
+  name: Som Comunitats
+  description: Pàgina web del projecte de Som Comunitats. WordPress connectat a Odoo.
+  tags:
+    - WordPress
+- id: somconnexio
+  url: https://somconnexio.coop/
+  name: Som Connexió
+  description: Pàgina web de la cooperativa Som Connexió
+  tags:
+    - WordPress
+- id: somoffice-sc
+  url: https://oficinavirtual.somconnexio.coop
+  name: Oficina Virtual Som Connexió
+  description: Suport al manteniment i desenvolupament de l'oficina virtual de Som Connexió.
+  tags:
+    - Frontend
+- id: miradanativa
+  url: https://www.miradanativa.org/
+  name: MiradaNativa
+  description: Portal de cinema indígena de la ONG AlterNativa.
+  tags:
+    - WordPress
+- id: indifest
+  url: https://indifest.or/
+  name: IndiFest
+  description: Pàgina web del festival de cinema indígena IndiFest.
+  tags:
+    - WordPress
+- id: sommobilitat
+  url: https://www.sommobilitat.coop/
+  name: SomMobilitat
+  description: Pàgina web de Som Mobilitat. WordPress connectat a Odoo.
+  tags:
+    - WordPress
+- id: elmercat
+  url: https://elmercatcultural.cat
+  name: elMercat
+  description: Pàgina web de elMercat i plataforma d'inscripcións.
+  tags:
+    - WordPress
+    - eCommerce
+- id: datakitchen
+  url: https://goingdigital.oecd.org/datakitchen/
+  name: OECD DataKitchen
+  description: Observatori de dades del projecte DataKitchen.
+  tags:
+    - Frontend
+- id: wider-wiid 
+  url: https://www4.wider.unu.edu/
+  name: UNU Wider WIID
+  description: Observatori de dades del projecte WIID.
+  tags:
+    - Python
 - id: silviagenoves
   url: https://www.silviagenoves.art/
   name: Silvia Genovés Art
-  description: Portafoli i plataforma e-commerce desenvolupada amb wordpress per l'artista multidisciplinar Silvia Genovés.
+  description: Portafoli i plataforma e-commerce desenvolupada amb WordPress per l'artista multidisciplinar Silvia Genovés.
   tags: 
-    - Wordpress
-    - e-commerce
+    - WordPress
+    - eCommerce
 - id: toetsav
   url: https://www.to.upc.edu
   name: TO ETSAV
   description: '<em>&#8220;El projecte TO vol qüestionar-se la idea de sostenibilitat: Què cal sostenir?&#8221;</em>. Pàgina web del projecte arquitectònic.'
   tags:
-    - Programari a mida
-    - Single-page application (SPA)
+    - Frontend
 - id: kilometrezero
   url: https://kilometrezero.org/
   name: KilometreZero
   description: Plataforma de gestió d'inscripcions a esdeveniments esportius i publicació en viu de resultats.
   tags:
       - Programari a mida
-      - Single-page application (SPA)
 - id: vh3d
   url: https://dadescomunals.org/vh3d
   name: Vall d'Hebron 3D
   description: Videojoc col·laboratiu per a la presentació del nou Pla Estratègic 2021-2025 de la Vall d'Hebron
   tags:
       - Programari a mida
-      - WebGL
 - id: equinox
   url: https://equinoxtrail.com
   name: Equinox Trail
   description: Pàgina web de la Equinox Trail, una lliga de dues curses de trail celebrada als dos equinoccis que atravessarem al llarg de l'any 2022
   tags:
-      - Jekyll
-      - Pàgina web estàtica
-- id: hemeroteca-oberta
-  url: https://dadescomunals.org/hemeroteca-oberta
-  name: Hemeroteca Oberta
-  description: Eina web per fer scrapping de l'hemeroteca de la Vanguardia de cara a la seva explotació estadística 
-  tags:
-      - Programari a mida
-      - Pàgina web estàtica
+      - JAMStack
 - id: icqa_waves
   url: https://dadescomunals.org/icqa_waves
   name: ICQA Waves
   description: Mapa isobàric 3D de la qualitat de l'aire a l'àrea metropolitana de Barcelona
   tags:
       - Programari a mida
-      - Pàgina web estàtica
 - id: bikelogic
   url: https://www.bikelogic.org
   name: Bikelogic
   description: Web i botiga online de la cooperativa de ciclologística Bikelogic
   tags:
-      - Wordpress
-      - e-commerce
+      - WordPress
+      - eCommerce

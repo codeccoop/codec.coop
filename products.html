@@ -41,7 +41,7 @@ page: products
     <article name="{{product.name | downcase}}" class="products__product media">
         <figure class="products__product-badge media-left">
             <a href="{{ product.url }}" target="__blank">
-                <p class="image is-128x128">
+                <p class="image is-64x64">
 				<picture>
 					<source srcset="{{ base.url }}/assets/images/logos/{{ product.id }}.png" type="image/png" />
 					<img src="{{ base.url }}/assets/images/logos/{{product.id }}.webp" type="image/webp" alt="Logotip del producte {{product.name }}"/>
@@ -56,19 +56,6 @@ page: products
                 <p class="products__product-description">{{ product.description }}</p>
 				<button role="link" class="products__product-contact button is-link" data-href="#pageFooter">Contacta'ns</button>
             </a>
-            <nav class="products__product-footer">
-                <div>
-                    <p><strong>Preu mínim: {{ product.price }}</strong></p>
-                </div>
-                <div>
-					<a class="products__product-link" target="__blank" aria-label="Pàgina web del projecte {{ product.name }}" href="{{ product.url }}">
-                        <span class="icon is-small webpage"><i role="img"></i></span>
-                    </a>
-					<a class="products__product-link" target="__blank" aria-label="Repositori github del projecte {{ product.name }}" href="{{ product.github }}">
-                        <span class="icon is-small github"><i role="img"></i></span>
-                    </a>
-                </div>
-            </nav>
         </div>
     </article>
     {% endfor %}
