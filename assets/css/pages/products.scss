@@ -7,7 +7,7 @@
 @import "breakpoints";
 
 main.products {
-    padding: $header-height $site-paddings 1rem;
+  padding: $header-height $site-paddings 1rem;
 
 	.products__title {
 		margin-top: 25px;
@@ -25,37 +25,37 @@ main.products {
 			}
 		}
 
-        .subtitle {
-            display: block;
-        }
+    .subtitle {
+      display: block;
     }
+  }
 
-    hr {
-        margin: 2rem 0 3rem;
-        background-color: $font-color;
-        height: 1px;
-    }
+  hr {
+    margin: 2rem 0 3rem;
+    background-color: $font-color;
+    height: 1px;
+  }
 }
 
 .products__image {
-    padding-left: 5vw;
-    filter: drop-shadow(2px 2px 6px #0003);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  padding-left: 5vw;
+  filter: drop-shadow(2px 2px 6px #0003);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
 	picture {
 		display: flex;
 		justify-content: center;
 
 		> img {
-            width: 100%;
-            height: 150px;
-            object-fit: contain;
+      width: 100%;
+      height: 150px;
+      object-fit: contain;
 
-            @include m-media(xsm) {
-                height: 250px;
-            }
+      @include m-media(xsm) {
+        height: 250px;
+      }
 
 			@include m-media(sm) {
         height: auto;
@@ -72,60 +72,61 @@ main.products {
 		width: 100%;
 	}
 
-    &:last-child .products__product-badge {
-        margin-top: 1rem;
+  &:last-child .products__product-badge {
+    margin-top: 1rem;
+  }
 
-    }
+  .products__product-badge {
+    cursor: pointer;
 
-    .products__product-badge {
-        @include m-media(md) {
-          .is-96x96 {
-            display: none;
-          }
+    @include m-media(md) {
+      .is-96x96 {
+        display: none;
+      }
 
-          .is-64x64 {
-            margin-top: -0.2em;
-          }
-        }
-    }
-
-    @include m-media(zr, md) {
-        flex-direction: column;
-
-        .products__product-badge {
-            margin: 0;
-
-            .is-64x64 {
-              display: none;
-
-              picture {
-                width: 100%;
-                height: 100%;
-                display: flex;
-                align-items: center;
-
-                > img {
-                  max-height: 100%;
-                  max-width: 40vw;
-                  object-fit: contain;
-                }
-              }
-            }
-        }
-    }
-
-    .products__product-badge {
-        margin-top: .25em;
-        margin-bottom: 1em !important;
-
-        @include m-media(md) {
-          margin-bottom: 0.15em !important;
+      .is-64x64 {
+        margin-top: -0.2em;
       }
     }
+  }
 
-    &[name="artesania"] img {
-        filter: saturate(.7) drop-shadow(2px 2px 6px #00006030);
+  @include m-media(zr, md) {
+    flex-direction: column;
+
+    .products__product-badge {
+      margin: 0;
+
+      .is-64x64 {
+        display: none;
+
+        picture {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+
+          > img {
+            max-height: 100%;
+            max-width: 40vw;
+            object-fit: contain;
+          }
+        }
+      }
     }
+  }
+
+  .products__product-badge {
+    margin-top: .25em;
+    margin-bottom: 1em !important;
+
+    @include m-media(md) {
+      margin-bottom: 0.15em !important;
+    }
+  }
+
+  &[name="artesania"] img {
+    filter: saturate(.7) drop-shadow(2px 2px 6px #00006030);
+  }
 
 	.products__product-toggle {
 		cursor: default;
@@ -149,7 +150,7 @@ main.products {
 
 				@include m-media(zr, sm) {
 					padding: 3px;
-					right: 10px;
+					right: 1px;
 				}
 
 				@media (orientation: portrait) {
@@ -167,7 +168,6 @@ main.products {
 		.products__product-subtitle {
 			cursor: pointer;
 		}
-
 
 		&.open {
 			.products__product-title:after {
@@ -205,40 +205,4 @@ main.products {
 			margin-bottom: 1rem;
 		}
 	}
-}
-
-.products__product-footer {
-    display: flex;
-    justify-content: space-between;
-    @include m-media (sm, md) {
-        margin-bottom: 2rem;
-    }
-}
-
-.products__product-link {
-
-    &:not(:first-child) {
-        margin-left: 10px;
-    }
-
-    &:hover {
-        text-decoration: none;
-    }
-
-    .icon {
-        opacity: .75;
-
-        > i {
-            width: 100%;
-            height: 100%;
-        }
-
-        &.webpage > i {
-            @include m-icon(webpage);
-        }
-
-        &.github > i {
-            @include m-icon(github);
-        }
-    }
 }

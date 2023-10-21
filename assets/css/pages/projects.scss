@@ -85,7 +85,7 @@ main.archive {
         max-height: 30vh;
 			
 				@include m-media(md) {
-					height: 35vw;
+					height: 20vw;
           max-height: unset;
 				}
 			}
