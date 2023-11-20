@@ -18,6 +18,9 @@
     - id: archive
       name: Arxiu de projectes
       link: '/archive.html' 
+- id: feina
+  name: Feina
+  link: /feina.html
 - id: contact
   name: Contacte
   link: '/#contact'
