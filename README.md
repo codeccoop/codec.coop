@@ -1,3 +1,3 @@
-# dadescomunals.coop
+# Còdec Cooperativa
 
-Pàgina pública de la cooperative Da|desComunals
+Pàgina pública de la cooperativa
